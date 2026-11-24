@@ -1,0 +1,42 @@
+# ---------------------------------------------------------------
+# Sistema de Reservas — arquivos que NÃO devem ir para o repositório
+# ---------------------------------------------------------------
+
+# Saída da compilação (gerada por: javac -d out ...)
+out/
+bin/
+build/
+target/
+*.class
+
+# Lista de fontes usada na compilação pelo Prompt de Comando do Windows
+fontes.txt
+
+# Pacotes e logs gerados pela JVM
+*.jar
+*.war
+*.log
+hs_err_pid*
+replay_pid*
+
+# IDEs e editores
+.idea/
+*.iml
+.vscode/
+.classpath
+.project
+.settings/
+nbproject/
+*.swp
+*~
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Arquivos sensíveis (o projeto não usa, mas ficam protegidos por precaução)
+.env
+.env.*
+*.pem
+*.key
