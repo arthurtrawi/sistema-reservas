@@ -22,6 +22,7 @@ Projeto acadêmico de **Programação Orientada a Objetos I**, escrito em
 - [Testes](#testes)
 - [Como usar](#como-usar)
 - [Telas](#telas)
+- [Modelagem (UML)](#modelagem-uml)
 - [Estrutura do projeto](#estrutura-do-projeto)
 - [Solução de problemas](#solução-de-problemas)
 - [Documentação técnica](#documentação-técnica)
@@ -254,6 +255,39 @@ Para regenerar as imagens após mudanças na interface:
 
 ---
 
+## Modelagem (UML)
+
+Diagramas de classes do sistema. Notação: `+` público, `-` privado, `#` protegido;
+seta com triângulo vazado = herança (tracejada = implementação de interface);
+seta tracejada aberta = dependência; losango preenchido = composição;
+métodos em itálico são abstratos.
+
+**Domínio** — entidades e suas associações: uma reserva pertence a um cliente
+e a um recurso; cada cliente ou recurso pode ter várias reservas.
+
+![Diagrama de classes do domínio](docs/imagens/09-uml-dominio.png)
+
+**Serviços e repositórios** — os serviços concentram as regras de negócio e
+usam os repositórios para armazenar os dados em memória.
+
+![Diagrama de classes dos serviços e repositórios](docs/imagens/10-uml-servicos.png)
+
+**Exceções** — hierarquia de erros de negócio; a interface captura
+`SistemaReservasException` e exibe a mensagem ao usuário.
+
+![Hierarquia de exceções](docs/imagens/11-uml-excecoes.png)
+
+**Interface gráfica** — a janela principal navega entre painéis que implementam
+`Atualizavel`; Clientes e Recursos compartilham a classe abstrata `PainelCadastro`.
+
+![Diagrama de classes da interface gráfica](docs/imagens/12-uml-interface.png)
+
+> Os diagramas são imagens estáticas: se a estrutura das classes mudar,
+> eles precisam ser atualizados manualmente (o `GeradorCapturas` atualiza
+> apenas as capturas de tela).
+
+---
+
 ## Estrutura do projeto
 
 ```
@@ -272,7 +306,7 @@ sistema-reservas/
 │   │   ├── recurso/         Módulo de Recursos
 │   │   └── reserva/         Módulo de Reservas
 │   └── teste/               Testes automatizados e gerador de capturas
-├── docs/imagens/            Capturas de tela
+├── docs/imagens/            Capturas de tela e diagramas UML
 ├── .gitignore
 ├── README.md
 └── DOCUMENTACAO_IA.md       Documentação técnica detalhada
